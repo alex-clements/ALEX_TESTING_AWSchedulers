@@ -1,0 +1,66 @@
+.schedule {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr); /* Adjust as needed */
+  gap: 1px;
+  font-family: Arial, sans-serif;
+}
+
+.schedule-header {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  grid-column: 1 / -1; /* Stretch across all columns */
+  grid-auto-rows: 48px; /* Adjust height as needed */
+}
+
+.day {
+  /* background-color: #fff; */
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.schedule-body {
+  display: grid;
+  grid-template-columns: 100px repeat(5, 1fr);
+  grid-auto-rows: 12px;
+  grid-column: 1 / -1;
+}
+
+.hour {
+  grid-column: 1 / 2;
+  grid-row: span 4;
+  background-color: #fff;
+  display: flex;
+  padding-top: 5px;
+  /* align-items: center; */
+  justify-content: center;
+  font-weight: bold;
+}
+
+.timeslot {
+  grid-column: span 1;
+  grid-row: span 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  background-color: #fff;
+  border-right: 1px solid #ebebeb; /* Light line for the timeslot */
+}
+
+.timeslot-border {
+  border-bottom: 1px solid #ebebeb; /* Light line for the timeslot */
+}
+
+.timeslot-green {
+  background-color: #ff9902 !important;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  clip-path: inset(0px 0px -7px 0px);
+}
+
+.timeslot-unavailable {
+  background-color: #dad6d6;
+}

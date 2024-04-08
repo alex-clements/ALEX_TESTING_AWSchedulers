@@ -1,0 +1,16 @@
+# Info on running container command: https://hub.docker.com/_/docker
+networks:
+  awschedulers:
+
+services:
+  deployer:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    networks:
+      - awschedulers
+    volumes:
+      - ./docker/aws_vars.txt:/backend/aws_vars.txt

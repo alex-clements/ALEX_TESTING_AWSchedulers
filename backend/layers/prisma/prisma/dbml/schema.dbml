@@ -1,0 +1,79 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table Building {
+  id String [pk]
+  airportCode String [not null]
+  number Int [not null]
+  name String
+  longitude Float [not null]
+  latitude Float [not null]
+  rooms Room [not null]
+  users User [not null]
+}
+
+Table Room {
+  id String [pk]
+  floorNumber Int [not null]
+  number String [not null]
+  capacity Int [not null]
+  capabilities Capabilities
+  Building Building
+  buildingId String
+  BookingRecords BookingRecord [not null]
+
+  indexes {
+    (floorNumber, number, buildingId) [unique]
+  }
+}
+
+Table User {
+  id String [pk]
+  unix_id String [unique, not null]
+  isAdmin Boolean [not null, default: false]
+  Building Building
+  buildingId String
+  floorNumber Int [not null]
+  BookingRecords BookingRecord [not null]
+  OrganizedBookings Booking [not null]
+}
+
+Table Booking {
+  id String [pk]
+  startTime DateTime
+  endTime DateTime
+  organizer User [not null]
+  BookingRecords BookingRecord [not null]
+  userId String [not null]
+}
+
+Table BookingRecord {
+  User User [not null]
+  Room Room [not null]
+  Booking Booking [not null]
+  userId String [not null]
+  roomId String [not null]
+  bookingId String [not null]
+
+  indexes {
+    (userId, bookingId) [pk]
+  }
+}
+
+Enum Capabilities {
+  AV
+  VC
+}
+
+Ref: Room.buildingId > Building.id
+
+Ref: User.buildingId > Building.id
+
+Ref: Booking.userId > User.id
+
+Ref: BookingRecord.userId > User.id
+
+Ref: BookingRecord.roomId > Room.id
+
+Ref: BookingRecord.bookingId > Booking.id

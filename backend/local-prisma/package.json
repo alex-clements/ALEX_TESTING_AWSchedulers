@@ -1,0 +1,11 @@
+{
+  "name": "local-prisma",
+  "version": "1.0.0",
+  "description": "local prisma testing",
+  "main": "test.js",
+  "scripts": {
+    "start": "node test.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

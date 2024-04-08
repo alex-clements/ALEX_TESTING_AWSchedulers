@@ -1,0 +1,2 @@
+username,name,email,isAdmin,isActive,airportCode,buildingNumber,floorNumber,temporaryPassword
+BookingUser1,Booking User1,bookinguser1@awschedulers.com,FALSE,TRUE,YVR,32,1,qyd*i4$wWHIG

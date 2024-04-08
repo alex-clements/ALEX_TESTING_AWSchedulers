@@ -1,0 +1,19 @@
+﻿nothing,username,name,email,isAdmin,isActive,floorNumber,temporaryPassword
+,BookingUser1,Booking User1,bookinguser1@awschedulers.com,FALSE,TRUE,1,qyd*i4$wWHIG
+,BookingUser2,Booking User2,bookinguser2@awschedulers.com,FALSE,TRUE,2,5H0p#EcU&3ZL
+,BookingUser3,Booking User3,bookinguser3@awschedulers.com,FALSE,TRUE,3,A0V8uNh%*Nhv
+,BookingUser4,Booking User4,bookinguser4@awschedulers.com,FALSE,TRUE,4,X$9M88Y#N7vG
+,BookingUser5,Booking User5,bookinguser5@awschedulers.com,FALSE,TRUE,5,g$QM0^f!1#i0
+,AdminUser1,Admin User1,adminuser1@awschedulers.com,TRUE,TRUE,1,tnG0W^P^gBrH
+,AdminUser2,Admin User2,adminuser2@awschedulers.com,TRUE,TRUE,2,Y^p^362UE4OK
+,AdminUser3,Admin User3,adminuser3@awschedulers.com,TRUE,TRUE,3,gFc*a!A@W&0t
+,AdminUser4,Admin User4,adminuser4@awschedulers.com,TRUE,TRUE,4,K^y!#LZHi^4n
+,AdminUser5,Admin User5,adminuser5@awschedulers.com,TRUE,TRUE,5,j127dPg*mUws
+,aclements,Alex Clements,clements.alexander@outlook.com,TRUE,TRUE,1,
+,hjohnson,Hunter Johnson,johnson.ian.h@gmail.com,TRUE,TRUE,2,
+,slim,Seungwon Lim,seungwonlim.sl@gmail.com,TRUE,TRUE,3,
+,dsingal,Dhairya Singal,dhairyasingal08@gmail.com,TRUE,TRUE,2,
+,orel-test-user,Orel Ben Neriah,orelbn@student.ubc.ca,TRUE,TRUE,1,
+,rtavakoli,Radman Tavakoli,radmantvk@gmail.com,TRUE,TRUE,2,
+,rdick,Ryan Dick,ryanwbdick@gmail.com,TRUE,TRUE,1,
+,tleong,Taylor Leong,imwhoiem@gmail.com,TRUE,TRUE,3,

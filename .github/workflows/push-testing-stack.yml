@@ -1,0 +1,42 @@
+on:
+  workflow_dispatch:
+
+name: Push Testing Stack
+
+jobs:
+  build:
+    name: Push Testing Stack
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+
+      - name: Install npm
+        run: 'sudo apt update -y && sudo apt install nodejs npm -y'
+
+      - name: Create .env file
+        run: "echo 'DEPLOYMENT_ENVIRONMENT=Testing' > backend/.env"
+
+      - name: Add Default account to env file
+        run: "echo 'CDK_DEFAULT_ACCOUNT=${{ secrets.CDK_DEFAULT_ACCOUNT }}' >> backend/.env"
+
+      - name: Add Default region to env file
+        run: "echo 'CDK_DEFAULT_REGION=${{ secrets.CDK_DEFAULT_REGION }}' >> backend/.env"
+
+      - name: Install AWS CDK
+        run: 'sudo npm install -g aws-cdk'
+
+      - name: Install Requirements
+        run: 'npm run install-deps'
+        working-directory: backend
+
+      - name: CDK Deploy
+        run: 'cdk deploy --all --require-approval never'
+        working-directory: backend
